@@ -51,9 +51,9 @@ also_run_this = BashOperator(
 # [END howto_operator_bash_template]
 
 passing = KubernetesPodOperator(
-    'default',
-    'Python:3.6',
-    'passing-test',
+    namespace='default',
+    image='Python:3.6',
+    name='passing-test',
     cmds=["Python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
