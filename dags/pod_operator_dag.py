@@ -51,12 +51,12 @@ also_run_this = BashOperator(
 # [END howto_operator_bash_template]
 
 passing = KubernetesPodOperator(
-    namespace='default',
-    image="Python:3.6",
+    'default',
+    'Python:3.6',
+    'passing-test',
     cmds=["Python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
-    name="passing-test",
     task_id="passing-task",
     get_logs=True,
     dag=dag
