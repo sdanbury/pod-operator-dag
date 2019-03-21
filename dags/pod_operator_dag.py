@@ -52,10 +52,10 @@ also_run_this = BashOperator(
 
 passing = KubernetesPodOperator(
     namespace='default',
-    image='Python:3.6',
+    image='python:3',
     name='passing-test',
     in_cluster=True,
-    cmds=["Python","-c"],
+    cmds=["python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
     task_id="passing-task",
