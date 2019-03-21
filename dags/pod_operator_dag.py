@@ -54,6 +54,7 @@ passing = KubernetesPodOperator(
     namespace='default',
     image='Python:3.6',
     name='passing-test',
+    in_cluster=True,
     cmds=["Python","-c"],
     arguments=["print('hello world')"],
     labels={"foo": "bar"},
